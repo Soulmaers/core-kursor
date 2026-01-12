@@ -1,0 +1,453 @@
+.header_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.img_logo {
+    object-fit: contain;
+    /* или cover — смотри ниже */
+    width: 80%;
+    height: 200px;
+}
+
+
+.one_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    justify-content: space-around;
+}
+
+.title_info {
+    color: rgba(6, 28, 71, 1);
+    font-size: 2.8rem;
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.header_logo_oglavlenie {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(6, 28, 71, 1);
+    position: relative;
+    padding: 15px 0;
+    padding-bottom: 2px;
+}
+
+.ogl {
+    color: rgba(6, 28, 71, 1);
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+
+
+.img_logo_mini {
+    object-fit: contain;
+    position: absolute;
+    right: 30px;
+    bottom: -20px;
+}
+
+.two_container {
+    width: 80%;
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    flex: 0 1 40%;
+    /* ключевое: может сжиматься, базис 40%, не растёт */
+    max-height: 40%;
+    min-height: 0;
+    /* обязательно для корректной работы overflow в flex */
+    overflow: hidden;
+    /* всё лишнее скрываем */
+}
+
+.title_spans {
+    font-size: 1.7rem;
+    font-family: Arial;
+    margin: 5px 0;
+    color: rgba(6, 28, 71, 1);
+    font-weight: 500;
+}
+
+.title_spans {
+    line-height: 1.2;
+}
+
+/* только длинным блокам даём «...», напр. ОБЪЕКТЫ */
+.title_spans.clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    /* сколько строк показывать */
+    overflow: hidden;
+    word-break: break-word;
+}
+
+
+.footer_title_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* однострочная обрезка */
+.ellipsis-1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.podpis {
+    font-size: 1rem;
+    color: rgba(6, 28, 71, 1);
+}
+
+
+.head_meta {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+
+.chart_head_meta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nadpis {
+    font-size: 1.2rem;
+    color: #061c47
+}
+
+.body_pdf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    justify-content: space-between
+}
+
+.contant_title {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+
+.title_type {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.next {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 4px 0;
+    box-sizing: border-box;
+}
+
+.title_name {
+    color: #061c47;
+    font-size: 1.4rem;
+}
+
+.title_number {
+    color: #061c47;
+    font-size: 1.4rem;
+}
+
+.dashes {
+    width: 100%;
+    border-bottom: 2px dotted #061c47;
+    padding-top: 12px;
+    margin: 0 5px;
+}
+
+.title_component_sub {
+    padding-left: 26px;
+    box-sizing: border-box;
+    margin: 2px 0;
+}
+
+.component_title {
+    font-size: 1.2rem;
+    color: #061c47;
+    white-space: nowrap;
+}
+
+
+.page_break {
+    page-break-before: always;
+    margin-top: 20px;
+}
+
+.statistika_page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.components_page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.name_object {
+    font-size: 1.4rem;
+    color: #061c47;
+    align-self: center;
+}
+
+.name_component {
+    width: 50%;
+    margin: 10px 0;
+    font-size: 1.4rem;
+    color: #061c47;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.statistika_table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.components_table {
+    max-width: 100%;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+.components_table td {
+    border: 1px solid #061c47;
+    padding: 8px;
+    color: #061c47;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.components_table th {
+    border: 1px solid #061c47;
+    padding: 8px;
+    color: #061c47;
+    word-wrap: break-word;
+}
+
+.statistika_table td {
+    border: 1px solid #061c47;
+    padding: 8px;
+    color: #061c47;
+}
+
+.left_stat {
+    text-align: left;
+}
+
+.right_stat {
+    text-align: center;
+}
+
+.page_component {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.components_table .left_stat {
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.components_table td.last-row-cell {
+    border-top: 3px solid #38496C;
+    font-weight: bold;
+}
+
+.wrap_icon {
+    margin-right: 20px;
+    margin-left: 8px;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.uniqum_legend {
+    display: flex;
+    align-items: center;
+}
+
+
+.body_legend {
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.legend_container {
+    width: 100%;
+    min-height: 30px;
+    background-color: #38496C;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #fff;
+    margin: 30px 0;
+}
+
+.rect_legend {
+    margin-right: 20px;
+    margin-left: 8px;
+    width: 52px;
+    height: 25px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.rect_legend_moto {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: rgba(6, 28, 71, 0.8);
+    margin-right: 4px;
+    box-sizing: border-box;
+}
+
+.skdsh_leg {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    padding: 2px 0;
+}
+
+.value_tool_skdah {
+    text-align: left;
+}
+
+.info_window {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    color: rgba(6, 28, 71, 1);
+    background-color: #fff;
+    min-width: 52px;
+    height: 20px;
+    margin-right: 8px;
+    box-sizing: border-box;
+}
+
+.title_container_meta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+
+}
+
+.row_meta {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    color: rgba(6, 28, 71, 1);
+}
+
+.title_meta {
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+
+.oglav {
+    padding: 0;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.wrapper_low_title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.name_object_and_group {
+    width: 50%;
+    color: rgba(6, 28, 71, 1);
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: Arial
+}
+
+.name_object_and_group:first-child {
+    margin-left: 30px;
+}
+
+.obj {
+    font-weight: 300 !important;
+    margin-left: 10px;
+}
+
+.number_pages {
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: #000;
+    font-family: Arial;
+}
+
+
+.condition_chart {
+    margin: 5px 0;
+}

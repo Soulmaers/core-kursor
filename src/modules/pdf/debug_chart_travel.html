@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    .chart_travel { width: 1100px; height: 300px; margin-bottom: 30px; }
+  </style>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <div class="chart_container">
+  <div class="chart_travel" style="margin:30px 0" id="chart_0"></div><div class="chart_travel" style="margin:30px 0" id="chart_1"></div><div class="chart_travel" style="margin:30px 0" id="chart_2"></div></div>
+  <script>
+    window.chartData = [{"month":"03.2025","data":[{"date":"31.03.2025","mileage":396}]},{"month":"04.2025","data":[{"date":"01.04.2025","mileage":784},{"date":"02.04.2025","mileage":952},{"date":"03.04.2025","mileage":367},{"date":"04.04.2025","mileage":532},{"date":"05.04.2025","mileage":1270},{"date":"06.04.2025","mileage":523},{"date":"07.04.2025","mileage":234},{"date":"08.04.2025","mileage":547},{"date":"09.04.2025","mileage":688},{"date":"10.04.2025","mileage":1027},{"date":"11.04.2025","mileage":533},{"date":"12.04.2025","mileage":0},{"date":"13.04.2025","mileage":0},{"date":"14.04.2025","mileage":12},{"date":"15.04.2025","mileage":0},{"date":"16.04.2025","mileage":686},{"date":"17.04.2025","mileage":1028},{"date":"18.04.2025","mileage":756},{"date":"19.04.2025","mileage":742},{"date":"20.04.2025","mileage":796},{"date":"21.04.2025","mileage":451},{"date":"22.04.2025","mileage":725},{"date":"23.04.2025","mileage":480},{"date":"24.04.2025","mileage":333},{"date":"25.04.2025","mileage":865},{"date":"26.04.2025","mileage":1033},{"date":"27.04.2025","mileage":340},{"date":"28.04.2025","mileage":12},{"date":"29.04.2025","mileage":16},{"date":"30.04.2025","mileage":0}]},{"month":"05.2025","data":[{"date":"01.05.2025","mileage":0},{"date":"02.05.2025","mileage":0},{"date":"03.05.2025","mileage":0},{"date":"04.05.2025","mileage":0},{"date":"05.05.2025","mileage":1},{"date":"06.05.2025","mileage":18},{"date":"07.05.2025","mileage":4},{"date":"08.05.2025","mileage":0},{"date":"09.05.2025","mileage":0},{"date":"10.05.2025","mileage":12},{"date":"11.05.2025","mileage":939},{"date":"12.05.2025","mileage":1053},{"date":"13.05.2025","mileage":513},{"date":"14.05.2025","mileage":813},{"date":"15.05.2025","mileage":656}]}];
+  </script>
+  <script>
+    (async function () {
+    console.log('тут')
+    window.chartData.forEach((monthData, index) => {
+        const containerId = `chart_${index}`;
+        const chartData = monthData.data;
+        console.log(monthData)
+        // const date = (monthData.data.filter(e => e.name === 'Начало').map(e => (e.result)))[0]
+        // const mileage = (this.data.filter(e => e.name === 'Пробег').map(e => (e.result)))[0]
+
+
+        const width = 1100;
+        const height = 300;
+        const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+
+        const svg = d3.select(`#${containerId}`)
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + 60 + "," + 30 + ")");
+
+
+
+
+
+        const barWidth = 30;
+
+        const axisMax = d3.max(chartData, d => +d.mileage);
+        const xScale = d3.scaleBand()
+            .domain(chartData.map(d => d.date))
+            .range([0, chartData.length * 36 + 5])
+
+
+
+        const yScale = d3.scaleLinear()
+            .domain([0, axisMax * 1.05])
+            .range([(height - 60), 0]);
+
+        const tiksX = svg.append("g")
+            .attr("transform", "translate(0," + (height - 60) + ")")
+            .call(d3.axisBottom(xScale));
+
+        tiksX.selectAll('text')
+            .style("fill", function (d) {
+
+                const newDate = new Date(d.split(".").reverse().join("-")).getDay();
+                console.log(newDate)
+                // Проверяем, равен ли текст "сб" или "вск"
+                if (newDate === 6 || newDate === 0) {
+                    return "red"; // Окрашиваем в красный цвет
+                } else {
+                    return "black"; // Оставляем черным по умолчанию
+                }
+            })
+            .style('font-weight', function (d) {
+                const day = parseInt(d.substring(0, 2), 10)
+                if (day === 1) return '900'
+            })
+            .text(function (d) {
+                // Преобразуем дату из строки
+                const newDate = d.slice(0, 5)
+
+                // Изменяем текст на значение newDate
+                return newDate;
+            })
+            .attr("transform", "translate(4, 0)");
+
+        tiksX.selectAll(".tick line")
+            .attr("x1", 4) // Сдвигаем риски на 8 px вправо
+            .attr("x2", 4);
+
+        svg.append("text")
+            .attr("y", -25)
+            .attr("x", -7)
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("км")
+            .style('color', 'rgba(6, 28, 71, 1)')
+        // Добавляем последний тик для максимального значения
+        const ticks = yScale.ticks(14); // Получаем 10 тиков для оси
+        ticks[ticks.length - 1] = axisMax
+
+        svg.append("g")
+            .attr("transform", "translate(0, " + (0) + ")")
+            .call(d3.axisLeft(yScale).tickValues(ticks))
+
+        console.log(chartData)
+        svg.selectAll('rect')
+            .data(chartData)
+            .enter().append('rect')
+            .attr("x", d => xScale(d.date) + 8)
+            .attr("y", d => yScale(d.mileage))
+            .attr("height", d => (height - 60) - yScale(d.mileage))
+            .attr("width", barWidth)
+            .attr("fill", "#336699")
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 1)
+
+        chartData.forEach(function (d) {
+            svg.append("text")
+                .attr("x", xScale(d.date) + xScale.bandwidth() / 2 + 4)
+                .attr("y", yScale(d.mileage) - 10)
+                .text(d.mileage)
+                .attr("font-size", "10px")
+                .attr("text-anchor", "middle")
+                .attr('fill', 'rgba(6, 28, 71, 1)')
+        });
+
+
+    })
+})();
+
+  </script>
+</body>
+</html>
