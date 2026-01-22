@@ -1,4 +1,12 @@
 // calc/CalkuletaTrips.js
+
+
+/*
+класс расчета событий поездок
+
+*/
+
+
 class CalkuletaTrips {
     constructor(config) {
 

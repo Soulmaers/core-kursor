@@ -1,5 +1,8 @@
 
 
+/*
+роут получения отчета
+*/
 const express = require('express')
 
 const get_report = require('../controllers/get_reports_controller')

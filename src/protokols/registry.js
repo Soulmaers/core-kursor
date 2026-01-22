@@ -2,6 +2,12 @@
 
 
 
+
+/*
+подключение протоколов прослушки по TCP
+создание объектов обработки
+
+*/
 const { WialonApi } = require('./wialonApi');
 const ListenPortIPS = require('./wialonIps');
 const { Navtelecom } = require('./navtelecom');

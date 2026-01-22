@@ -1,4 +1,10 @@
 // services/edgeconnect/pushToEdgeMSG.js
+
+/*
+
+отправка телеметрии и конфига на edge сервер
+
+*/
 const axios = require('axios');
 
 const EDGE_URL = 'http://127.0.0.1:3334/edge/push'; // внутренний HTTP EDGE

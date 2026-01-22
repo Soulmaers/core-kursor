@@ -1,3 +1,9 @@
+
+
+/*
+
+контроллеры для возврата структуры данных для графиков
+*/
 const { ProcessDB } = require('../modules/events/ProcessDB')
 const { CalkuletaTrips } = require('../modules/events/HistoryCalkulate')
 const { OilCalculator } = require('../modules/events/OilCalculate')

@@ -1,3 +1,9 @@
+
+/*
+
+контроллеры для возврата структуры данных за интервал
+*/
+
 const sql = require('mssql');
 const { normalizePoint } = require('../services/utils/normalizePoint')
 

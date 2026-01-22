@@ -1,5 +1,7 @@
 
-
+/*
+поораничный мидваер между edgeсервером и core - проверяет валидность токена при общении между серверами
+*/
 
 module.exports.authEdge = function authEdge(req, res, next) {
     //  console.log('тута')

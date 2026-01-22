@@ -1,4 +1,10 @@
 
+
+/*
+
+контроллеры для возврата структуры данных для отчетов
+*/
+
 const { ReportsControllClass } = require('../modules/reports/ReportsControllClass')
 
 

@@ -1,3 +1,11 @@
+
+/*Сервер core -связь с бд
+маршруты обработки входящих данных
+запуск прослушки протоколов по TCP
+
+*/
+
+
 const express = require('express')
 const cors = require('cors')
 const path = require('path');

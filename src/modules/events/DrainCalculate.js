@@ -1,5 +1,9 @@
 
 
+/*
+класс расчета сливов
+
+*/
 const ServisFunction = require('./ServisFunctions')
 
 class DrainCalculate {

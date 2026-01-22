@@ -1,4 +1,10 @@
 
+/*
+класс для работы с бд
+
+*/
+
+
 const axios = require('axios')
 const sql = require('mssql');
 const { normalizePoint } = require('../../services/utils/normalizePoint')

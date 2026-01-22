@@ -1,3 +1,12 @@
+
+/*
+запись конфига в бд
+получение последнего конфига из бд
+
+*/
+
+
+
 const { pushConfig } = require('../services/edgeconnect/pushToEDgeMSG')
 
 

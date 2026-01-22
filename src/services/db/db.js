@@ -1,3 +1,9 @@
+
+/*
+
+настройки подключения к бд
+*/
+
 const sql = require('mssql');
 
 function buildConfig(env = process.env) {

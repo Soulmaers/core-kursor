@@ -1,4 +1,13 @@
 //цетральный конвеер
+
+/*
+ПОЛУЧЕНИЕ ДАННЫХ
+поэтапная обработка
+
+*/
+
+
+
 const { pushTelemetry } = require('../services/edgeconnect/pushToEDgeMSG')
 
 

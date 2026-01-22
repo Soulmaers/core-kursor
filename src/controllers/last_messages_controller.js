@@ -1,4 +1,9 @@
 
+
+/*
+
+контроллеры для возврата структуры данных последнего сообщения
+*/
 const { normalizePoint } = require('../services/utils/normalizePoint')
 
 

@@ -1,6 +1,8 @@
 
 
-
+/*
+роут получения событий за интервал
+*/
 const express = require('express')
 
 const get_events = require('../controllers/get_events_controller')

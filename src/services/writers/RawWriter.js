@@ -1,4 +1,9 @@
 // services/core/src/services/writers/RawWriter.js
+
+/*
+
+запись телеметрии в бд
+*/
 const sql = require('mssql');
 
 class RawWriter {

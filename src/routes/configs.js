@@ -1,4 +1,10 @@
 
+
+/*
+роуты  добавления конфига объекта в бд
+получение телеметрии по последнему сообщению
+
+*/
 const express = require('express')
 
 const config_controller = require('../controllers/config_controller')

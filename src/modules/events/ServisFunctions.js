@@ -1,4 +1,8 @@
 
+/*
+класс сервисных утилит
+
+*/
 
 class ServisFunction {
 

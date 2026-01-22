@@ -1,5 +1,10 @@
 
 
+
+/*
+
+запрос в бд полученние последнего конфига
+*/
 class ConfigService {
 
     constructor({ db }) {

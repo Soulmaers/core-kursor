@@ -1,3 +1,8 @@
+
+/*
+класс расчета заправок
+
+*/
 const ServisFunction = require('./ServisFunctions')
 
 
